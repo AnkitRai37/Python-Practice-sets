@@ -288,3 +288,42 @@ print(calc.add(10,20,30))
 print(calc.add(10,20,30,40))
 print(calc.add(1,2,3,4,5))
 
+#---- Magic methods--------------
+class Student:
+
+    # 1. Constructor
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    # 2. User-friendly output
+    def __str__(self):
+        return f"Student: {self.name}, Marks: {self.marks}"
+
+    # 3. Developer representation
+    def __repr__(self):
+        return f"Student('{self.name}', {self.marks})"
+
+    # 4. Length of student's name
+    def __len__(self):
+        return len(self.name)
+
+    # 5. Add marks of two students
+    def __add__(self, other):
+        return self.marks + other.marks
+
+
+s1 = Student("Ankit", 85)
+s2 = Student("Rahul", 90)
+
+# __str__()
+print(s1)
+
+# __repr__()
+print(repr(s1))
+
+# __len__()
+print(len(s1))
+
+# __add__()
+print(s1 + s2)
