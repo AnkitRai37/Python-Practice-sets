@@ -151,19 +151,3 @@ items are arbitrary positional arguments,
 details are arbitrary keyword arguments (like address, payment_method).
 Print a formatted summary of the order.
 
-
-
-def order_summary(customer, *items, **details):
-    print("Order Summary")
-    print("Customer:", customer)
-
-    print("\nItems Ordered:")
-    for item in items:
-        print("-", item)
-
-    print("\nOrder Details:")
-    for key, value in details.items():
-        print(f"{key} : {value}")
-
-# Example call
-order_summary("Ankit", "Laptop", "Mouse", "Keyboard", address="Lucknow", payment_method="UPI")
